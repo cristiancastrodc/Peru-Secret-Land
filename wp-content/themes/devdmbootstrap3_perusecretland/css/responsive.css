@@ -1,0 +1,45 @@
+@media screen and (min-width: 768px) {
+  .table-row-sm {
+    display: table;
+  }
+  .col-sm-table-middle {
+    display: table-cell;
+    vertical-align: middle;
+    float: none !important;
+  }
+  .col-sm-table {
+    display: table-cell;
+    float: none;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  #quienes-somos {
+    padding-top: 400px;
+    padding-bottom: 400px;
+    margin-top: -300px;
+  }
+  #nuestro-equipo {
+    padding-top: 400px;
+    padding-bottom: 400px;
+    margin-top: -275px;
+  }
+  #tours {
+    padding: 425px 0;
+    margin-top: -495px;
+  }
+  #galeria {
+    margin-top: -350px;
+    padding-top: 200px;
+    padding-bottom: 200px;
+  }
+  #que-deseas-hacer {
+    padding-top: 400px;
+    padding-bottom: 200px;
+    margin-top: -300px;
+  }
+  #tours-list {
+    padding-top: 100px;
+    padding-bottom: 300px;
+  }
+}

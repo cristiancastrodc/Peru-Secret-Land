@@ -1,0 +1,226 @@
+/*
+ Theme Name:   Peru Secret Land Theme
+ Theme URI:    mailto:soporte@insidelab.net
+ Description:  Theme for Peru Secret Land. Based on DevDmBootstrap3.
+ Author:       Cristian Castro - Inside.lab Cusco
+ Author URI:   http://facebook.com/xtiancastro7
+ Template:     devdmbootstrap3
+ Version:      1.0.0
+*/
+html {
+  height: 100%;
+}
+body.home,
+body.category {
+  height: 100%;
+  padding-bottom: 0;
+}
+header {
+  height: 100%;
+  background-position: bottom center;
+  background-repeat: no-repeat;
+}
+body.home header {
+  background-image: url('img/header.png');
+}
+body.category header {
+  -webkit-background-size: cover;
+  background-size: cover;
+}
+nav.navbar a {
+  color: #FFF;
+  font-weight: bold;
+}
+nav.navbar {
+  padding-top: 15px;
+  text-transform: uppercase;
+  border-bottom: none;
+  transition: all 0.5s ease-in-out;
+}
+nav.navbar.navbar-shrink {
+  background-color: #00275c;
+}
+nav.navbar.navbar-shrink #polylang-2 {
+  display: none;
+}
+#polylang-2 > ul {
+  text-align: right;
+}
+#polylang-2 > ul > li {
+  display: inline-block;
+  padding: 0 5px;
+}
+.nav-menu {
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flex;
+  display: -o-flex;
+  display: flex;
+  width: 100%;
+  -webkit-justify-content: space-between;
+  justify-content:space-between;
+}
+nav.navbar:not(.navbar-shrink) .nav-menu > li:not(.logo-link) {
+  border-bottom: 2px solid #FFF;
+  transition: border-bottom 0.5s ease-in-out;
+}
+.nav-menu > li:not(.logo-link) {
+  -webkit-flex: 1 auto;
+  flex: 1 auto;
+  text-align: center;
+}
+.navbar-nav > .logo-link > a {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+.nav > li > a:not(.logo-link):hover,
+.nav > li > a:not(.logo-link):focus {
+  background-color: #0052b2;
+}
+
+#quienes-somos {
+  background-image: url('img/aves.png'),
+                    url('img/mountains.png'),
+                    url('img/aves.png');
+  background-position: right top,
+                       right bottom,
+                       left 75%;
+  background-repeat: no-repeat;
+  background-attachment: fixed, scroll;
+  color: #5d5d5d;
+  font-family: 'Helvetica-Condensed-Light', Helvetica, Arial, sans-serif;
+  font-size: 18px;
+}
+
+#nuestro-equipo {
+  background: url('img/equipo.png') left center no-repeat;
+  -webkit-background-size: 100% 100%;
+  background-size: 100% 100%;
+  font-size: 16px;
+  position: relative;
+  z-index: 1;
+}
+
+#tours {
+  background: url('img/tours.jpg') center center no-repeat;
+  -webkit-background-size: cover;
+  background-size: cover;
+}
+a.tour-link {
+  font-family: Helvetica;
+  text-transform: uppercase;
+  font-size: 40px;
+  border: 3px solid #FFF;
+  padding: 15px 45px;
+  display: inline-block;
+}
+a.tour-link:hover,
+a.tour-link:focus {
+  text-decoration: none;
+  color: #FFF;
+}
+
+.tour-link-wrapper:not(.last) {
+  margin-bottom: 60px;
+}
+
+#galeria {
+  background: url('img/galeria-bg.png') right bottom no-repeat,
+              url('img/galeria-top.png') left top no-repeat;
+}
+.gallery-images {
+  background: url('img/galeria-linea.png') center center no-repeat;
+  -webkit-background-size: contain;
+  background-size: contain;
+  margin-bottom: 120px;
+}
+.year > h2 {
+  color: #183758;
+  font-family: 'Helvetica';
+  font-weight: bold;
+  font-size: 50px;
+}
+a.gallery-view-more {
+  font-family: Helvetica;
+  text-transform: uppercase;
+  color: #727272;
+  padding: 5px 45px;
+  display: inline-block;
+  border: 2px solid #6c6d6f;
+  -webkit-box-shadow: -5px -5px 5px 1px rgba(108, 109, 111, 0.26);
+  box-shadow: -5px -5px 5px 1px rgba(108, 109, 111, 0.26);
+}
+
+#que-deseas-hacer {
+  background: url('img/line.png') center 90% / 80% no-repeat,
+              url('img/que-deseas-bg.png') center top / cover no-repeat
+}
+a.contact-us-link {
+  padding: 5px 30px;
+  border: 2px solid #FFF;
+  margin: 0 10px;
+}
+a.contact-us-link:hover,
+a.contact-us-link:focus {
+  color: #FFF;
+}
+
+.excerpt-wrapper {
+  padding: 0 45px;
+}
+a.read-more-link {
+  text-align: right;
+  color: #FFF;
+  background-color: #000;
+  padding: 5px 15px;
+}
+
+/* other classes */
+.parent {
+  position: relative;
+}
+.child {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.c-white,
+.c-white * {
+  color: #FFF;
+}
+.c-yellow {
+  color: #FFED00;
+}
+.c-gray {
+  color: #5d5d5d;
+}
+.mb-0 {
+  margin-bottom: 0;
+}
+.mt-30 {
+  margin-top: 30px;
+}
+.mt-60 {
+  margin-top: 60px;
+}
+.mb-60 {
+  margin-bottom: 60px;
+}
+.pl-0 {
+  padding-left: 0;
+}
+.pr-0 {
+  padding-right: 0;
+}
+h1 {
+  font-family: 'Helvetica-Condensed-Light', Helvetica, Arial, sans-serif;
+  text-transform: uppercase;
+  color: #5d5d5d;
+  font-size: 50px;
+  margin-bottom: 30px;
+}
+a:hover,
+a:focus {
+  text-decoration: none;
+}

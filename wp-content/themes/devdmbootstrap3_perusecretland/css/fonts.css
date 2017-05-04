@@ -1,0 +1,55 @@
+@font-face {
+  font-family: 'Athelas-BoldItalic';
+  src: url('../fonts/Athelas-BoldItalic.ttf') format('truetype');
+  font-weight: bold;
+  font-style: italic;
+}
+@font-face {
+  font-family: 'Adleit-Demo';
+  src: url('../fonts/Adleit-Demo.ttf') format('truetype');
+  font-weight: normal;
+}
+@font-face {
+  font-family: 'Helvetica-Condensed-Light';
+  src: url('../fonts/Helvetica-Condensed-Light.otf') format('truetype');
+  font-weight: normal;
+}
+@font-face {
+  font-family: 'Helvetica';
+  src: url('../fonts/Helvetica.otf') format('truetype');
+  font-weight: normal;
+}
+
+.ff-athelas {
+  font-family: 'Athelas-BoldItalic', sans-serif;
+}
+.ff-adleit {
+  font-family: 'Adleit-Demo', sans-serif;
+}
+.ff-helvetica-condensed {
+  font-family: 'Helvetica-Condensed-Light', sans-serif;
+}
+.ff-helvetica {
+  font-family: 'Helvetica', sans-serif;
+}
+.fs-22 {
+  font-size: 22px;
+}
+.fs-40 {
+  font-size: 40px;
+}
+.fs-60 {
+  font-size: 60px;
+}
+.fs-80 {
+  font-size: 80px;
+}
+.lh-1 {
+  line-height: 1;
+}
+.ls-10 {
+  letter-spacing: 10px;
+}
+.ts {
+  text-shadow: -4px -1px 9px rgba(0, 0, 0, 0.45);
+}
