@@ -17,9 +17,18 @@ add_action( 'wp_enqueue_scripts', 'perusecretland_css_js' );
  * Add custom widgets areas
  */
 function perusecretland_widgets_init() {
+  // Top widgets
   $args = array(
     'name'          => 'Top Widgets',
     'id'            => 'top-widgets',
+    'before_widget' => '<div id="%1$s" class="widget %2$s">',
+    'after_widget'  => '</div>',
+  );
+  register_sidebar( $args );
+  // Floating sidebar
+  $args = array(
+    'name'          => 'Floating Sidebar',
+    'id'            => 'floating-sidebar',
     'before_widget' => '<div id="%1$s" class="widget %2$s">',
     'after_widget'  => '</div>',
   );
@@ -33,3 +42,18 @@ register_nav_menus(
     'pages_menu' => 'Pages Menu',
   )
 );
+
+function header_background() {
+  if (is_category()) {
+    echo "style='background-image:url(" . z_taxonomy_image_url() . ")'";
+  }
+  elseif (is_single()) {
+    $cats = get_the_category();
+    echo "style='background-image:url(" . z_taxonomy_image_url($cats[0]->term_id) . ")'";
+  }
+}
+
+function post_cat_title() {
+  $cats = get_the_category();
+  echo $cats[0]->name;
+}

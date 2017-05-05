@@ -33,9 +33,9 @@
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
 </nav>
-<header class="parent" <?php if(is_category()) echo "style='background-image:url(".z_taxonomy_image_url().")'"; ?>>
+<header class="parent" <?php header_background(); ?>>
   <div class="container child">
-    <?php if (is_front_page()): ?>
+    <?php if (is_front_page() || is_page()): ?>
       <div class="row">
         <div class="col-sm-12 text-center">
           <p class="lh-1 ff-athelas c-white"><?php _e( 'Customize your trip.' , 'perusecretland' ); ?> <span class="ff-adleit c-yellow fs-22"><?php _e( 'Make it unique.', 'perusecretland' ); ?></span></p>
@@ -48,13 +48,25 @@
           <img src="<?php echo get_stylesheet_directory_uri(); ?>/img/logo-grises.png" alt="Peru Secret Land Logo Gray" class=" img-responsive center-block">
         </div>
       </div>
-    <?php else: ?>
+    <?php elseif(is_category()): ?>
       <div class="row">
         <div class="col-sm-12 text-center">
           <p class="ff-adleit c-yellow fs-22"><?php _e( 'What experience do you wish?', 'perusecretland' ); ?></p>
           <p class="lh-1 text-uppercase ff-helvetica-condensed fs-80 mb-0 c-white ls-10"><?php single_cat_title(); ?></p>
         </div>
       </div>
+    <?php elseif (is_single()): ?>
+      <div class="row">
+        <div class="col-sm-12 text-center">
+          <p class="ff-adleit c-yellow fs-22"><?php _e( 'What experience do you wish?', 'perusecretland' ); ?></p>
+          <p class="lh-1 text-uppercase ff-helvetica-condensed fs-80 mb-0 c-white ls-10"><?php post_cat_title(); ?></p>
+        </div>
+      </div>
     <?php endif ?>
   </div>
 </header>
+<?php if ( is_active_sidebar( 'floating-sidebar' ) ) : ?>
+  <div id="floating-sidebar">
+    <?php dynamic_sidebar( 'floating-sidebar' ); ?>
+  </div>
+<?php endif; ?>
