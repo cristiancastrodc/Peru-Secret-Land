@@ -7,8 +7,11 @@ if ( ! function_exists( 'perusecretland_css_js' ) ) {
   function perusecretland_css_js() {
     wp_enqueue_style( 'perusecretland-fonts', get_stylesheet_directory_uri() . '/css/fonts.css');
     wp_enqueue_style( 'perusecretland-responsive', get_stylesheet_directory_uri() . '/css/responsive.css');
+    wp_enqueue_style( 'jquery-chosen', get_stylesheet_directory_uri() . '/css/chosen.min.css');
     wp_enqueue_script( 'perusecretland-easing', get_stylesheet_directory_uri() . '/js/jquery.easing.1.3.js', array('jquery'));
+    wp_enqueue_script( 'jquery-chosen', get_stylesheet_directory_uri() . '/js/chosen.jquery.min.js', array('jquery'));
     wp_enqueue_script( 'perusecretland-scripts', get_stylesheet_directory_uri() . '/js/scripts.js', array('jquery'));
+    wp_enqueue_script( 'perusecretland-footer-scripts', get_stylesheet_directory_uri() . '/js/footer.scripts.js', array('jquery', 'jquery-chosen'), false, true );
   }
 } // endif function_exists( 'perusecretland_css_js' ).
 add_action( 'wp_enqueue_scripts', 'perusecretland_css_js' );
@@ -57,3 +60,42 @@ function post_cat_title() {
   $cats = get_the_category();
   echo $cats[0]->name;
 }
+
+/*
+ * Return al posts in Categories page.
+ */
+add_filter('pre_get_posts', 'posts_in_category');
+function posts_in_category($query){
+  if ($query->is_category) {
+    $query->set('posts_per_archive_page', -1);
+  }
+}
+
+/*
+ * Restrict Simple History to only Admin users.
+ */
+add_filter("simple_history/view_history_capability", function($capability) {
+  $capability = "manage_options";
+  return $capability;
+});
+
+
+/*  */
+/*
+add_action( 'wpcf7_init', 'custom_views_post_title' );
+function custom_views_post_title() {
+  wpcf7_add_shortcode( 'custom_views_post_title', 'custom_views_post_title_shortcode_handler' );
+}
+function custom_views_post_title_shortcode_handler( $tag ) {
+  global $post;
+  $args = array( 'post_type' => 'post', 'posts_per_page' => -1 );
+  $myposts = get_posts( $args );
+  $output = '<select name="lstdate" id="fleet" class="chosen-select" multiple="multiple" data-placeholder="Choose a country..."><option></option>';
+  foreach ( $myposts as $post ) : setup_postdata($post);
+     $title = get_the_title();
+     $output .= '<option value="'. $post->ID .'">'. $title .' </option>';
+  endforeach;
+  $output .= "</select>";
+  return $output;
+}
+*/
