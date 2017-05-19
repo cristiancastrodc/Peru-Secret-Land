@@ -245,3 +245,6 @@ a:hover,
 a:focus {
   text-decoration: none;
 }
+.form-group h3 {
+  margin-top: 0;
+}

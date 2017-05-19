@@ -80,22 +80,63 @@ add_filter("simple_history/view_history_capability", function($capability) {
 });
 
 
-/*  */
 /*
+ * Listado de tours para formulario de personaliza tu tour
+ */
 add_action( 'wpcf7_init', 'custom_views_post_title' );
 function custom_views_post_title() {
   wpcf7_add_shortcode( 'custom_views_post_title', 'custom_views_post_title_shortcode_handler' );
 }
 function custom_views_post_title_shortcode_handler( $tag ) {
   global $post;
-  $args = array( 'post_type' => 'post', 'posts_per_page' => -1 );
-  $myposts = get_posts( $args );
-  $output = '<select name="lstdate" id="fleet" class="chosen-select" multiple="multiple" data-placeholder="Choose a country..."><option></option>';
-  foreach ( $myposts as $post ) : setup_postdata($post);
-     $title = get_the_title();
-     $output .= '<option value="'. $post->ID .'">'. $title .' </option>';
+
+  /* Aventura */
+  $args = array( 'post_type' => 'post', 'posts_per_page' => -1, 'category' => 13 );
+  $posts_aventura = get_posts( $args );
+
+  $output = '<div class="col-sm-4">';
+  $output .= '<h3>' . __('Adventure Tours', 'perusecretland') . '</h3>';
+  $output .= '<select name="toursaventura[]" class="chosen-select form-control wpcf7-select" multiple="multiple" data-placeholder="' . __('Choose some tours', 'perusecretland') . '">';
+
+  foreach ( $posts_aventura as $post ) : setup_postdata($post);
+    $title = get_the_title();
+    $output .= '<option value="' . $title . '">'. $title .' </option>';
   endforeach;
-  $output .= "</select>";
+
+  $output .= "</select></div>";
+  /* Aventura */
+
+  /* Tradicional */
+  $args = array( 'post_type' => 'post', 'posts_per_page' => -1, 'category' => 19 );
+  $posts_aventura = get_posts( $args );
+
+  $output .= '<div class="col-sm-4">';
+  $output .= '<h3>' . __('Traditional Tours', 'perusecretland') . '</h3>';
+  $output .= '<select name="tourstradicional[]" class="chosen-select form-control wpcf7-select" multiple="multiple" data-placeholder="' . __('Choose some tours', 'perusecretland') . '">';
+
+  foreach ( $posts_aventura as $post ) : setup_postdata($post);
+    $title = get_the_title();
+    $output .= '<option value="' . $title . '">'. $title .' </option>';
+  endforeach;
+
+  $output .= "</select></div>";
+  /* Tradicional */
+
+  /* Vivencial */
+  $args = array( 'post_type' => 'post', 'posts_per_page' => -1, 'category' => 25 );
+  $posts_aventura = get_posts( $args );
+
+  $output .= '<div class="col-sm-4">';
+  $output .= '<h3>' . __('Experiential Tours', 'perusecretland') . '</h3>';
+  $output .= '<select name="toursvivencial[]" class="chosen-select form-control wpcf7-select" multiple="multiple" data-placeholder="' . __('Choose some tours', 'perusecretland') . '">';
+
+  foreach ( $posts_aventura as $post ) : setup_postdata($post);
+    $title = get_the_title();
+    $output .= '<option value="' . $title . '">'. $title .' </option>';
+  endforeach;
+
+  $output .= "</select></div>";
+  /* Vivencial */
+
   return $output;
 }
-*/

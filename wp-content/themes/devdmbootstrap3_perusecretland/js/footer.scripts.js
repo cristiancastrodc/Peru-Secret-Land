@@ -1,5 +1,5 @@
 (function($) {
 
-  $('.chosen-select').chosen({disable_search_threshold: 5})
+  $('.chosen-select').chosen({no_results_text: "Ningún tour coincide con "})
 
 })( jQuery );
