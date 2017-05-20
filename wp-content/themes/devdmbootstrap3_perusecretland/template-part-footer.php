@@ -14,3 +14,8 @@
   </div>
 </section>
 <!-- /Que deseas hacer -->
+
+<!-- Copyright Section -->
+<div id="copyright">
+  <a href="http://insidelab.net" target="_blank"></a>
+</div>

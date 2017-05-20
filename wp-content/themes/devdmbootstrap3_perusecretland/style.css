@@ -248,3 +248,24 @@ a:focus {
 .form-group h3 {
   margin-top: 0;
 }
+
+/******* COPYRIGHT CSS *******/
+#copyright {
+  position: fixed;
+  bottom: 10px;
+  left: 10px;
+  z-index: 3;
+}
+#copyright a {
+  display: block;
+  height: 8px;
+  width: 72px;
+  transition: background 0.3s;
+  background: url('img/insidelab.png') no-repeat;
+  background-position: bottom;
+  z-index: 10;
+}
+#copyright a:hover {
+  transition: background 0.3s;
+  background-position: top;
+}
