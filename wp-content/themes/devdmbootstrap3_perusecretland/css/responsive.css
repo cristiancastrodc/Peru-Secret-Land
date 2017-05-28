@@ -1,3 +1,53 @@
+nav.navbar {
+  background-color: #00275c;
+}
+#main-navbar .navbar-nav {
+  margin-top: 0;
+  margin-bottom: 0;
+  margin-left: 0;
+  margin-right: 0;
+  display: block;
+}
+.navbar-nav > .logo-link {
+  display: none;
+}
+#main-navbar .navbar-nav > li:not(.logo-link) {
+  border-bottom: 1px solid #FFF;
+  transition: border-bottom 0.5s ease-in-out;
+}
+
+#quienes-somos {
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+#nuestro-equipo {
+  -webkit-background-size: initial;
+  background-size: initial;
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+#tours {
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+a.tour-link {
+  font-size: 25px;
+}
+
+#galeria {
+  padding-top: 50px;
+}
+
+#que-deseas-hacer {
+  padding-top: 160px;
+  padding-bottom: 50px;
+}
+a.contact-us-link {
+  display: block;
+}
+
 @media screen and (min-width: 768px) {
   .table-row-sm {
     display: table;
@@ -15,6 +65,96 @@
     width: 50%;
     float: left;
     margin-right: 45px;
+  }
+  nav.navbar {
+    background-color: transparent;
+  }
+  nav.navbar.navbar-shrink {
+    background-color: #00275c;
+  }
+  #main-navbar .navbar-nav {
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flex;
+    display: -o-flex;
+    display: flex;
+    width: 100%;
+    -webkit-justify-content: space-between;
+    justify-content:space-between;
+  }
+  nav.navbar #main-navbar .navbar-nav > li {
+    border-bottom: none;
+  }
+  nav.navbar:not(.navbar-shrink) #main-navbar .navbar-nav > li:not(.logo-link) {
+    border-bottom: 2px solid #FFF;
+  }
+  nav.navbar.navbar-shrink #polylang-2 {
+    display: none;
+  }
+
+  #quienes-somos {
+    padding-top: 200px;
+    padding-bottom: 200px;
+    margin-top: -150px;
+  }
+
+  #nuestro-equipo {
+    -webkit-background-size: 100% 100%;
+    background-size: 100% 100%;
+    padding-top: 300px;
+    padding-bottom: 300px;
+    margin-top: -300px;
+  }
+
+  #tours {
+    padding-top: 300px;
+    padding-bottom: 300px;
+    margin-top: -425px;
+  }
+  a.tour-link {
+    font-size: 40px;
+  }
+
+  #galeria {
+    padding-top: 150px;
+    padding-bottom: 100px;
+    margin-top: -175px;
+  }
+
+  #que-deseas-hacer {
+    padding-top: 200px;
+    padding-bottom: 100px;
+    margin-top: -150px;
+  }
+  a.contact-us-link {
+    display: inline;
+  }
+
+  .category .nav > li > a,
+  .single-post .nav > li > a,
+  .page .nav > li > a {
+    padding-right: 10px;
+    padding-left: 10px;
+  }
+  #tours-list,
+  #main-content {
+    padding-top: 50px;
+    padding-bottom: 150px;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .navbar-nav > .logo-link {
+    display: block;
+  }
+
+  #galeria {
+    margin-top: -225px;
+  }
+
+  #que-deseas-hacer {
+    padding-top: 250px;
+    padding-bottom: 150px;
   }
 }
 

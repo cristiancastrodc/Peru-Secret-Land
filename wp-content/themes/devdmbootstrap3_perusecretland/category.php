@@ -10,28 +10,17 @@
         <?php if (have_posts()): ?>
           <?php // The Loop
           while ( have_posts() ) : the_post(); ?>
-            <div class="row table-row-sm">
-              <div class="col-sm-6 pl-0 pr-0 col-sm-table-middle">
-                <?php if ($wp_query->current_post % 2 == 0): ?>
-                  <?php echo get_the_post_thumbnail('', 'full'); ?>
-                <?php else: ?>
-                  <div class="text-center excerpt-wrapper">
-                    <h2 class="text-uppercase ff-helvetica-condensed"><a class="c-gray" href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php the_title_attribute(); ?>"><?php the_title(); ?></a></h2>
-                    <p><?php echo get_the_excerpt(); ?></p>
-                    <div class="text-right"><a href="<?php the_permalink(); ?>" class="read-more-link ff-helvetica-condensed"><?php _e('[Read more]', 'perusecretland') ?></a></div>
-                  </div>
-                <?php endif ?>
+            <div class="row table-row-sm pb-15 pb-md-0">
+              <?php $is_odd = ($wp_query->current_post % 2 == 0); ?>
+              <div class="col-sm-6 pl-0 pr-0 col-sm-table-middle <?php if ($is_odd) echo "col-sm-push-6"; ?>">
+                <?php echo get_the_post_thumbnail('', 'full'); ?>
               </div>
-              <div class="col-sm-6 pl-0 pr-0 col-sm-table-middle">
-                <?php if ($wp_query->current_post % 2 == 0): ?>
-                  <div class="text-center excerpt-wrapper">
-                    <h2 class="text-uppercase ff-helvetica-condensed"><a class="c-gray" href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php the_title_attribute(); ?>"><?php the_title(); ?></a></h2>
-                    <p><?php echo get_the_excerpt(); ?></p>
-                    <div class="text-right"><a href="<?php the_permalink(); ?>" class="read-more-link ff-helvetica-condensed"><?php _e('[Read more]', 'perusecretland') ?></a></div>
-                  </div>
-                <?php else: ?>
-                  <?php echo get_the_post_thumbnail('', 'full'); ?>
-                <?php endif ?>
+              <div class="col-sm-6 pl-0 pr-0 col-sm-table-middle <?php if ($is_odd) echo "col-sm-pull-6"; ?>">
+                <div class="text-center excerpt-wrapper">
+                  <h2 class="text-uppercase ff-helvetica-condensed"><a class="c-gray" href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php the_title_attribute(); ?>"><?php the_title(); ?></a></h2>
+                  <p><?php echo get_the_excerpt(); ?></p>
+                  <div class="text-right"><a href="<?php the_permalink(); ?>" class="read-more-link ff-helvetica-condensed"><?php _e('[Read more]', 'perusecretland') ?></a></div>
+                </div>
               </div>
             </div>
           <?php endwhile; ?>

@@ -32,11 +32,20 @@
 .ff-helvetica {
   font-family: 'Helvetica', sans-serif;
 }
+.fs-16 {
+  font-size: 16px;
+}
 .fs-18 {
   font-size: 18px;
 }
+.fs-20 {
+  font-size: 20px;
+}
 .fs-22 {
   font-size: 22px;
+}
+.fs-35 {
+  font-size: 35px;
 }
 .fs-40 {
   font-size: 40px;
@@ -55,4 +64,13 @@
 }
 .ts {
   text-shadow: -4px -1px 9px rgba(0, 0, 0, 0.45);
+}
+
+@media screen and (min-width: 768px) {
+  .fs-sm-22 {
+    font-size: 22px;
+  }
+  .fs-sm-80 {
+    font-size: 80px;
+  }
 }

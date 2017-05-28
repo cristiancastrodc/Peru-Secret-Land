@@ -42,11 +42,11 @@ nav.navbar {
   border-bottom: none;
   transition: all 0.5s ease-in-out;
 }
-nav.navbar.navbar-shrink {
-  background-color: #00275c;
-}
-nav.navbar.navbar-shrink #polylang-2 {
-  display: none;
+.navbar-brand {
+  max-width: 175px;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-right: 0;
 }
 #polylang-2 > ul {
   text-align: right;
@@ -54,20 +54,6 @@ nav.navbar.navbar-shrink #polylang-2 {
 #polylang-2 > ul > li {
   display: inline-block;
   padding: 0 5px;
-}
-.nav-menu {
-  display: -webkit-flex;
-  display: -moz-flex;
-  display: -ms-flex;
-  display: -o-flex;
-  display: flex;
-  width: 100%;
-  -webkit-justify-content: space-between;
-  justify-content:space-between;
-}
-nav.navbar:not(.navbar-shrink) .nav-menu > li:not(.logo-link) {
-  border-bottom: 2px solid #FFF;
-  transition: border-bottom 0.5s ease-in-out;
 }
 .nav-menu > li:not(.logo-link) {
   -webkit-flex: 1 auto;
@@ -78,9 +64,16 @@ nav.navbar:not(.navbar-shrink) .nav-menu > li:not(.logo-link) {
   padding-top: 0;
   padding-bottom: 0;
 }
-.nav > li > a:not(.logo-link):hover,
-.nav > li > a:not(.logo-link):focus {
+.nav > li:not(.logo-link) > a:hover,
+.nav > li:not(.logo-link) > a:focus {
   background-color: #0052b2;
+}
+.nav > li.logo-link > a:hover,
+.nav > li.logo-link > a:focus {
+  background-color: transparent;
+}
+span.icon-bar {
+  background-color: #FFF;
 }
 
 #quienes-somos {
@@ -98,9 +91,9 @@ nav.navbar:not(.navbar-shrink) .nav-menu > li:not(.logo-link) {
 }
 
 #nuestro-equipo {
-  background: url('img/equipo.png') left center no-repeat;
-  -webkit-background-size: 100% 100%;
-  background-size: 100% 100%;
+  background-image: url('img/equipo.png');
+  background-position: left center;
+  background-repeat: no-repeat;
   font-size: 16px;
   position: relative;
   z-index: 1;
@@ -114,7 +107,6 @@ nav.navbar:not(.navbar-shrink) .nav-menu > li:not(.logo-link) {
 a.tour-link {
   font-family: Helvetica;
   text-transform: uppercase;
-  font-size: 40px;
   border: 3px solid #FFF;
   padding: 15px 45px;
   display: inline-block;
@@ -233,6 +225,14 @@ a.read-more-link {
 }
 .pr-0 {
   padding-right: 0;
+}
+.pb-15 {
+  padding-bottom: 15px;
+}
+@media screen and (min-width: 992px) {
+  .pb-md-0 {
+    padding-bottom: 0;
+  }
 }
 h1 {
   font-family: 'Helvetica-Condensed-Light', Helvetica, Arial, sans-serif;

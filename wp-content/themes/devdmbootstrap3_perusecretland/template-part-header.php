@@ -8,13 +8,14 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="<?php echo esc_url( home_url( '/' ) ); ?>">Peru Secret Land</a>
+      <a class="navbar-brand" href="<?php echo esc_url( home_url( '/' ) ); ?>"><img src="<?php echo get_stylesheet_directory_uri(); ?>/img/logo.png" alt="Peru Secret Land Logo" class="img-responsive"></a>
     </div>
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="main-navbar">
       <?php if ( is_active_sidebar( 'top-widgets' ) ) : ?>
         <?php dynamic_sidebar( 'top-widgets' ); ?>
       <?php endif; ?>
+      <a href="<?php echo esc_url( home_url( '/' ) ); ?>"><img src="<?php echo get_stylesheet_directory_uri(); ?>/img/logo.png" alt="Peru Secret Land Logo" class="img-responsive center-block visible-sm-block"></a>
       <?php if (is_front_page()): ?>
         <?php
           wp_nav_menu( array(
@@ -52,14 +53,14 @@
       <div class="row">
         <div class="col-sm-12 text-center">
           <p class="ff-adleit c-yellow fs-22"><?php _e( 'What experience do you wish?', 'perusecretland' ); ?></p>
-          <p class="lh-1 text-uppercase ff-helvetica-condensed fs-80 mb-0 c-white ls-10"><?php single_cat_title(); ?></p>
+          <p class="lh-1 text-uppercase ff-helvetica-condensed fs-35 fs-sm-80 mb-0 c-white ls-10"><?php single_cat_title(); ?></p>
         </div>
       </div>
     <?php elseif (is_single()): ?>
       <div class="row">
         <div class="col-sm-12 text-center">
           <p class="ff-adleit c-yellow fs-22"><?php _e( 'What experience do you wish?', 'perusecretland' ); ?></p>
-          <p class="lh-1 text-uppercase ff-helvetica-condensed fs-80 mb-0 c-white ls-10"><?php post_cat_title(); ?></p>
+          <p class="lh-1 text-uppercase ff-helvetica-condensed fs-35 fs-sm-80 mb-0 c-white ls-10"><?php post_cat_title(); ?></p>
         </div>
       </div>
     <?php endif ?>
